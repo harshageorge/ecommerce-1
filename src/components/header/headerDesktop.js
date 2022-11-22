@@ -11,12 +11,17 @@ import {
   } from "@mui/material";
   import Actions from "./actions";
   import SearchIcon from "@mui/icons-material/Search";
-import { HeaderBar,HeaderContainer,  MyList} from '../../styles/header'
+  import {
+    HeaderContainer,
+    HeaderBar,
+    MyList,
+  } from "../../styles/header";
+
 
 function HeaderDesktop({matches}) {
-    return (
-        <HeaderContainer>
-      <HeaderBar variant="h4">My Shop</HeaderBar>
+ return (
+    <HeaderContainer>
+      <HeaderBar variant="h4">Pet Shop</HeaderBar>
       <MyList type = "row">
         <ListItemText primary="Home" />
         <ListItemText primary="Categories" />
@@ -29,8 +34,9 @@ function HeaderDesktop({matches}) {
           </ListItemIcon>
         </ListItemButton>
           </MyList> 
-     <Actions />   
+     <Actions matches={matches}/>   
     </HeaderContainer>
+
          )
 }
 
