@@ -3,10 +3,10 @@ import Container from '@mui/material/Container';
 import { ThemeProvider } from "@mui/system";
 import Header from "./components/header/index.js";
 import Banner from "./components/banner";
-import ProductListing from "./components/ProductListing";
-import ProductDetails from "./components/ProductDetails";
+import {Typography, Box} from "@mui/material";
 import theme from './styles/theme';
 import Products from "./components/products";
+import Footer from "./components/footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -16,7 +16,11 @@ function App() {
       {/* <Router> */}
     <Header/>
     <Banner/>
+    <Box display="flex" justifyContent="center" sx={{p:4}}>
+              <Typography variant="h4">Our Products</Typography>
+            </Box>
     <Products/>
+    <Footer/>
         {/* <Routes>
         <Route exact path="/" element={<ProductListing/>}></Route>
        <Route path="/product/:productId" element={<ProductDetails/>}></Route>
