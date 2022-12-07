@@ -7,6 +7,7 @@ import {Typography, Box} from "@mui/material";
 import theme from './styles/theme';
 import Products from "./components/products";
 import Footer from "./components/footer";
+import AppDrawer from './components/drawer';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </Box>
     <Products/>
     <Footer/>
+    <AppDrawer/>
         {/* <Routes>
         <Route exact path="/" element={<ProductListing/>}></Route>
        <Route path="/product/:productId" element={<ProductDetails/>}></Route>
