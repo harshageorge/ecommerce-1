@@ -12,7 +12,8 @@ import { products } from "../../data";
 function Products() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  dispatch(setProducts(products));
 
   // useEffect(() => {
   //   fetchProducts();

@@ -16,9 +16,10 @@ import {
     HeaderBar,
     MyList,
   } from "../../styles/header";
-
+  import { useUIContext } from "../../context/ui";
 
 function HeaderDesktop({matches}) {
+  const { showSearchBox, setshowSearchBox } = useUIContext();
  return (
     <HeaderContainer>
       <HeaderBar variant="h4">Pet Shop</HeaderBar>
@@ -30,7 +31,7 @@ function HeaderDesktop({matches}) {
         <ListItemText primary="Contact us" />
         <ListItemButton>
           <ListItemIcon>
-            <SearchIcon />
+            <SearchIcon onClick={()=>setshowSearchBox(true)} />
           </ListItemIcon>
         </ListItemButton>
           </MyList> 

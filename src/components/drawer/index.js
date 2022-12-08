@@ -9,30 +9,53 @@ import {
     ListItemText,
     styled,
   } from "@mui/material";
+  import { Colors } from "../../styles/theme";
+  import { useUIContext } from "../../context/ui";
+import { DrawerCloseButton } from "../../styles/header";
+import CloseIcon from "@mui/icons-material/Close";
+
+  const MiddleDivider = styled((props) => (
+    <Divider variant="middle" {...props} />
+  ))``;
 export default function AppDrawer() {
+  const { drawerOpen, setDrawerOpen } = useUIContext();
     return(
-      <Drawer open={true}>
-<List>
+    <>
+      {drawerOpen && (
+        <DrawerCloseButton onClick={() => setDrawerOpen(false)}>
+          <CloseIcon
+            sx={{
+              fontSize: "2.5rem",
+              color: Colors.secondary,
+            }}
+          />
+        </DrawerCloseButton>
+      )}
+      <Drawer open={drawerOpen}>
+        <List>
 <ListItemButton>
             <ListItemText>Home</ListItemText>
           </ListItemButton>
-          <Divider variant="middle"/>
+          <MiddleDivider />
           <ListItemButton>
             <ListItemText>Categories</ListItemText>
           </ListItemButton>
-          <Divider variant="middle"/>
+          <MiddleDivider />
           <ListItemButton>
             <ListItemText>Products</ListItemText>
           </ListItemButton>
-          <Divider variant="middle"/>
+          <MiddleDivider />
           <ListItemButton>
             <ListItemText>About Us</ListItemText>
           </ListItemButton>
-          <Divider variant="middle"/>
+          <MiddleDivider />
           <ListItemButton>
             <ListItemText>Contact Us</ListItemText>
           </ListItemButton>
+            <MiddleDivider />
 </List>
       </Drawer>
+      </>
     )
 }
+
